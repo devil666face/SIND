@@ -15,6 +15,13 @@ apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docke
 
 ```
 
+## It work only with installed cgroups
+
+```bash
+root@localhost:~# apt list --installed | grep cgroupfs-mount
+cgroupfs-mount/stable,now 1.4 all [installed,automatic]
+```
+
 ### Copy group policy
 
 ```bash
