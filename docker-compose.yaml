@@ -1,0 +1,16 @@
+services:
+  systemd:
+    container_name: systemd
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: systemd:latest
+    privileged: true
+    tmpfs:
+      - /tmp
+      - /run
+      - /run/lock
+      - /sys/fs/cgroup
+    cap_add:
+      - SYS_ADMIN
+    cgroup: host
