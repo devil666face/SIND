@@ -9,12 +9,10 @@ RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && \
     echo $CONTAINER_TIMEZONE > /etc/timezone
 
 ARG SYSTEMD_PKG="systemd systemd-sysv"
-ARG KESL_PKG="perl kmod procps"
 
 RUN apt-get update --quiet --quiet && \
     apt-get install --quiet --quiet --yes \
     ${SYSTEMD_PKG} \
-    ${KESL_PKG} \
     && \
     apt-get --quiet --quiet clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
